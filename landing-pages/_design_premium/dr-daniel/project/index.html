@@ -1,0 +1,1300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Daniel Rocha — Medicina da Dor | Protocolo para Enxaqueca · HC-USP</title>
+<meta name="description" content="Protocolo personalizado que reduz em até 80% as crises de enxaqueca já nas primeiras semanas. Sem depender de remédio todo dia. Especialista pelo HC-USP. SP e Campinas.">
+
+<meta property="og:title" content="Sua enxaqueca pode terminar — mesmo que você já tenha tentado de tudo">
+<meta property="og:description" content="Protocolo do Dr. Daniel Rocha (HC-USP) — redução média de 80% nas crises. Avaliação presencial em SP e Campinas.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* === DARK + GOLD + WHITE — Premium, exclusivo === */
+  --ink:#0a0d14;             /* deepest dark */
+  --ink-1:#0e131c;           /* main dark bg */
+  --ink-2:#141a26;           /* mid dark for cards/section variation */
+  --ink-3:#1a2030;           /* lighter dark (for hovers/raised) */
+
+  --white:#ffffff;
+  --paper:#fafaf8;           /* off-white for white sections */
+  --paper-2:#f1eee7;         /* slightly warmer */
+  --hair-light:#e8e3d6;
+  --hair-dark:rgba(212,175,106,.18);
+
+  --text:#15171c;            /* on white */
+  --text-soft:#3d4049;
+  --text-dim:#6a6c74;
+
+  --on-dark:#ece7d6;         /* warm off-white on dark */
+  --on-dark-soft:#bdb6a0;
+  --on-dark-dim:#8a8675;
+
+  /* Gold scale */
+  --gold:#d4af6a;
+  --gold-2:#c5a05a;
+  --gold-soft:#e6cd95;
+  --gold-deep:#a37e3f;
+  --gold-glow:rgba(212,175,106,.35);
+
+  --maxw:1240px;
+  --r-pill:999px;
+  --r-soft:18px;
+  --r-card:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--ink-1);
+  color:var(--on-dark);
+  font-size:16.5px;line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Cormorant Garamond','Georgia',serif;font-weight:500;letter-spacing:-.005em}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:2}
+@media (max-width:640px){.container{padding:0 22px}}
+
+/* ================= TYPE TOKENS ================= */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+}
+.eyebrow .num{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:15px;letter-spacing:0;text-transform:none;
+}
+.eyebrow .rule{width:36px;height:1px;display:inline-block}
+.dark .eyebrow{color:var(--gold)}
+.dark .eyebrow .num{color:var(--gold)}
+.dark .eyebrow .rule{background:linear-gradient(90deg, var(--gold), transparent)}
+.light .eyebrow{color:var(--text)}
+.light .eyebrow .num{color:var(--gold-deep)}
+.light .eyebrow .rule{background:linear-gradient(90deg, var(--gold-deep), transparent)}
+
+/* ================= TOPBAR ================= */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,13,20,.75);
+  backdrop-filter:saturate(150%) blur(18px);
+  -webkit-backdrop-filter:saturate(150%) blur(18px);
+  border-bottom:1px solid rgba(212,175,106,.14);
+}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;padding:18px 32px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .mark{
+  width:46px;height:46px;border-radius:50%;
+  overflow:hidden;position:relative;
+  background:var(--ink-3);
+  box-shadow:0 0 0 1px var(--gold), 0 0 0 4px var(--ink-1), 0 0 0 5px rgba(212,175,106,.25);
+}
+.brand .mark img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
+.brand .wordmark{line-height:1.1}
+.brand .wordmark .name{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:19px;letter-spacing:.005em;color:var(--on-dark);
+}
+.brand .wordmark .role{
+  display:block;margin-top:3px;
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+}
+
+.top-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+  color:var(--ink);
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  padding:13px 22px;
+  border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.4),
+    inset 0 -1px 0 rgba(0,0,0,.15),
+    0 8px 24px -8px rgba(212,175,106,.5);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.top-cta:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(0,0,0,.15), 0 14px 30px -8px rgba(212,175,106,.6)}
+.top-cta svg{width:14px;height:14px}
+@media (max-width:680px){.top-cta .label{display:none}.top-cta{padding:12px 14px}}
+
+/* ================= SECTION SHELL ================= */
+section{padding:130px 0;position:relative;overflow:hidden}
+section.dark{background:var(--ink-1);color:var(--on-dark)}
+section.dark-grad{
+  background:
+    radial-gradient(900px 600px at 90% 10%, rgba(212,175,106,.10), transparent 60%),
+    radial-gradient(700px 500px at 5% 90%, rgba(212,175,106,.06), transparent 60%),
+    linear-gradient(180deg, var(--ink-1) 0%, #11172a 100%);
+  color:var(--on-dark);
+}
+section.light{background:var(--paper);color:var(--text)}
+section.white{background:var(--white);color:var(--text)}
+
+.section-head{
+  display:grid;grid-template-columns:.9fr 2.1fr;gap:80px;align-items:start;
+  margin-bottom:64px;
+}
+.section-head .meta{padding-top:8px}
+.section-head .num-large{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:96px;line-height:1;
+  background:linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;
+}
+.light .section-head .num-large,.white .section-head .num-large{
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-head .label{
+  display:block;margin-top:14px;
+  font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;
+}
+.dark .section-head .label,.dark-grad .section-head .label{color:var(--gold)}
+.light .section-head .label,.white .section-head .label{color:var(--gold-deep)}
+
+section h2{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(34px,4.4vw,58px);line-height:1.05;letter-spacing:-.018em;
+  margin:0 0 28px;
+  max-width:22ch;
+}
+section h2 em{font-style:italic;font-weight:500}
+.dark h2,.dark-grad h2{color:#fbf8ee}
+.dark h2 em.gold,.dark-grad h2 em.gold{
+  background:linear-gradient(180deg, var(--gold-soft) 30%, var(--gold) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.light h2,.white h2{color:var(--text)}
+.light h2 em.gold,.white h2 em.gold{
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+.section-lead{font-size:18px;line-height:1.6;max-width:62ch;margin:0 0 48px}
+.dark .section-lead,.dark-grad .section-lead{color:var(--on-dark-soft)}
+.light .section-lead,.white .section-lead{color:var(--text-soft)}
+
+@media (max-width:880px){
+  section{padding:80px 0}
+  .section-head{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .section-head .num-large{font-size:64px}
+}
+
+/* ================= BUTTONS — pill, refined ================= */
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:'Manrope',sans-serif;
+  font-size:15.5px;font-weight:700;letter-spacing:.02em;
+  padding:20px 36px;border:none;cursor:pointer;
+  border-radius:var(--r-pill);
+  position:relative;overflow:hidden;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease;
+  text-decoration:none;
+}
+.btn svg{width:18px;height:18px;flex:0 0 18px;position:relative;z-index:2}
+.btn span{position:relative;z-index:2}
+.btn-gold{
+  background:linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 45%, var(--gold-deep) 100%);
+  color:var(--ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.55),
+    inset 0 -1px 0 rgba(0,0,0,.12),
+    0 18px 40px -12px rgba(212,175,106,.55),
+    0 0 0 1px rgba(212,175,106,.4);
+}
+.btn-gold::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 50%, var(--gold-deep) 100%);
+  opacity:0;transition:opacity .3s ease;
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(0,0,0,.12), 0 24px 50px -12px rgba(212,175,106,.7), 0 0 0 1px rgba(212,175,106,.6)}
+.btn-gold:hover::before{opacity:.6}
+.btn-gold:hover svg, .btn-gold:hover span{color:var(--ink)}
+
+.btn-ghost-gold{
+  background:transparent;color:var(--gold);
+  border:1px solid var(--gold);
+  padding:18px 32px;
+}
+.btn-ghost-gold:hover{background:rgba(212,175,106,.1)}
+
+.btn-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:8px 0;
+  border-bottom:1px solid currentColor;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.btn-link::after{content:"→";font-family:'Cormorant Garamond',serif;font-weight:400;font-size:18px;transform:translateX(0);transition:transform .2s ease}
+.btn-link:hover::after{transform:translateX(4px)}
+.dark .btn-link,.dark-grad .btn-link{color:var(--gold)}
+.light .btn-link,.white .btn-link{color:var(--gold-deep)}
+
+/* ================= HERO ================= */
+.hero{
+  padding:90px 0 110px;
+  background:
+    radial-gradient(900px 600px at 85% -10%, rgba(212,175,106,.16), transparent 60%),
+    radial-gradient(700px 500px at 0% 80%, rgba(212,175,106,.06), transparent 60%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-1) 60%, #131929 100%);
+  color:var(--on-dark);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(180deg, transparent 60%, rgba(212,175,106,.04) 100%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:center}
+
+.hero-eyebrow{color:var(--gold);margin-bottom:36px;display:inline-flex;align-items:center;gap:14px;
+  font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+.hero-eyebrow .num{font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:15px}
+.hero-eyebrow .rule{width:36px;height:1px;background:linear-gradient(90deg, var(--gold), transparent)}
+
+h1.hero-title{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(42px, 6.4vw, 88px);
+  line-height:.98;letter-spacing:-.022em;
+  margin:0 0 32px;color:#fbf8ee;
+}
+h1.hero-title .accent{
+  font-style:italic;font-weight:500;
+  background:linear-gradient(180deg, var(--gold-soft) 20%, var(--gold) 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:inline-block;
+}
+h1.hero-title .br{display:block}
+
+.hero-sub{
+  font-size:19px;line-height:1.55;color:var(--on-dark-soft);
+  max-width:560px;margin:0 0 44px;font-weight:400;
+}
+.hero-sub b{color:#fbf8ee;font-weight:600}
+
+.hero-cta-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+
+.hero-micro{
+  margin-top:52px;padding-top:32px;
+  border-top:1px solid rgba(212,175,106,.18);
+  display:flex;gap:36px;flex-wrap:wrap;
+  font-size:12.5px;letter-spacing:.06em;color:var(--on-dark-dim);
+}
+.hero-micro span{display:inline-flex;align-items:baseline;gap:10px}
+.hero-micro span::before{
+  content:"";display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--gold);transform:translateY(-2px);
+  box-shadow:0 0 8px var(--gold-glow);
+}
+
+/* Hero portrait */
+.hero-portrait{position:relative;z-index:2}
+.portrait-frame{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:var(--r-card);
+  overflow:hidden;
+  background:#0d1322;
+  box-shadow:
+    0 0 0 1px rgba(212,175,106,.35),
+    0 50px 100px -30px rgba(0,0,0,.7),
+    0 0 0 8px rgba(212,175,106,.05);
+}
+.portrait-frame::before{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(10,13,20,.5) 100%);
+}
+.portrait-frame::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  border-radius:var(--r-card);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.portrait-frame img{
+  width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  filter:saturate(1.04) contrast(1.03);
+}
+.portrait-deco{
+  position:absolute;inset:-14px -14px -14px -14px;
+  border:1px solid rgba(212,175,106,.3);
+  border-radius:calc(var(--r-card) + 10px);
+  pointer-events:none;z-index:0;
+}
+.portrait-monogram{
+  position:absolute;z-index:4;top:24px;left:24px;
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(10,13,20,.7);backdrop-filter:blur(8px);
+  border:1px solid rgba(212,175,106,.45);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--gold);font-size:24px;font-weight:500;letter-spacing:-.02em;
+}
+.portrait-credential{
+  position:absolute;right:-30px;bottom:48px;z-index:5;
+  background:linear-gradient(180deg, #1a2030 0%, #11172a 100%);
+  border:1px solid rgba(212,175,106,.35);
+  padding:20px 24px;border-radius:16px;
+  box-shadow:0 24px 50px -16px rgba(0,0,0,.6);
+  max-width:260px;
+}
+.portrait-credential .label{
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:8px;
+}
+.portrait-credential .text{
+  font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.25;
+  color:#fbf8ee;font-weight:500;
+}
+.portrait-credential .text em{
+  font-style:italic;color:var(--on-dark-soft);display:block;
+  font-size:12.5px;font-family:'Manrope',sans-serif;font-weight:500;
+  margin-top:6px;letter-spacing:.04em;
+}
+
+@media (max-width:980px){
+  .hero{padding:56px 0 72px}
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .portrait-credential{right:8px;bottom:24px}
+  .portrait-monogram{top:18px;left:18px;width:54px;height:54px;font-size:20px}
+  h1.hero-title{font-size:clamp(38px,9.5vw,58px)}
+}
+
+/* ================= S2 — EMPATIA (white) ================= */
+.empathy{background:var(--white);color:var(--text)}
+
+.quotes-spread{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  margin:8px 0 64px;
+}
+.quotes-spread .q{
+  padding:32px 28px;
+  border-radius:var(--r-card);
+  background:var(--paper-2);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:20px;line-height:1.4;color:var(--text-soft);
+  position:relative;
+  border:1px solid var(--hair-light);
+}
+.quotes-spread .q::before{
+  content:"“";font-family:'Cormorant Garamond',serif;
+  font-size:64px;line-height:.4;
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  position:absolute;top:36px;left:22px;font-style:normal;
+}
+.quotes-spread .q .body{padding-left:24px;padding-top:8px}
+@media (max-width:880px){
+  .quotes-spread{grid-template-columns:1fr 1fr;gap:14px}
+  .quotes-spread .q{padding:26px 22px;font-size:18px}
+}
+
+.empathy-body{
+  display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;
+}
+.empathy-body .anchor{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:44px;line-height:1.1;color:var(--text);
+  padding-left:28px;border-left:2px solid var(--gold-deep);
+}
+.empathy-body .anchor em{
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;
+}
+.empathy-body .text{font-size:18px;line-height:1.7;color:var(--text-soft)}
+.empathy-body .text strong{color:var(--text);font-weight:700}
+@media (max-width:880px){.empathy-body{grid-template-columns:1fr;gap:32px}.empathy-body .anchor{font-size:30px}}
+
+/* ================= S3 — OBJEÇÃO (dark) ================= */
+.objection{
+  background:
+    radial-gradient(700px 500px at 10% 0%, rgba(212,175,106,.08), transparent 60%),
+    var(--ink-1);
+}
+
+.tried-list{
+  list-style:none;padding:0;margin:0 0 56px;
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(212,175,106,.18);
+}
+.tried-list li{
+  display:grid;grid-template-columns:48px 1fr;gap:24px;
+  padding:24px 28px 24px 0;
+  border-bottom:1px solid rgba(212,175,106,.14);
+  font-size:16.5px;color:var(--on-dark-soft);align-items:baseline;
+}
+.tried-list li:nth-child(odd){border-right:1px solid rgba(212,175,106,.14);padding-right:36px}
+.tried-list li:nth-child(even){padding-left:36px}
+.tried-list li .idx{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:18px;color:var(--gold);font-weight:500;letter-spacing:.02em;
+}
+.tried-list li .txt{position:relative;padding-left:32px}
+.tried-list li .txt::before{
+  content:"";position:absolute;left:0;top:.6em;
+  width:18px;height:1px;background:var(--gold);opacity:.7;
+}
+@media (max-width:780px){
+  .tried-list{grid-template-columns:1fr}
+  .tried-list li, .tried-list li:nth-child(odd){border-right:0;padding:22px 0}
+  .tried-list li:nth-child(even){padding-left:0}
+}
+
+.callout{
+  position:relative;
+  padding:48px 56px;border-radius:var(--r-card);
+  background:linear-gradient(135deg, #16203a 0%, #0e1320 100%);
+  border:1px solid rgba(212,175,106,.25);
+  font-size:19px;line-height:1.6;color:var(--on-dark);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  overflow:hidden;
+}
+.callout::before{
+  content:"";position:absolute;top:0;left:0;width:120px;height:3px;
+  background:linear-gradient(90deg, var(--gold), transparent);
+}
+.callout::after{
+  content:"";position:absolute;top:-100px;right:-100px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle, rgba(212,175,106,.15), transparent 60%);pointer-events:none;
+}
+.callout .lead{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:30px;line-height:1.25;color:var(--gold-soft);margin-bottom:18px;display:block;
+}
+.callout strong{color:#fbf8ee;font-weight:600}
+.callout em.gold{
+  background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;
+}
+@media (max-width:680px){.callout{padding:36px 28px}.callout .lead{font-size:24px}}
+
+/* ================= S4 — PROTOCOLO (white) ================= */
+.protocol{background:var(--white);color:var(--text)}
+
+.protocol-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  margin-bottom:40px;
+}
+.proto-card{
+  padding:36px 28px 40px;
+  border-radius:var(--r-card);
+  background:linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+  border:1px solid var(--hair-light);
+  position:relative;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  overflow:hidden;
+}
+.proto-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--gold-2), var(--gold-deep));
+  opacity:0;transition:opacity .3s ease;
+}
+.proto-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px -20px rgba(15,23,28,.15);
+  border-color:rgba(212,175,106,.45);
+}
+.proto-card:hover::before{opacity:1}
+
+.proto-card .mark{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg, #fbf8ee, #f1e9d3);
+  border:1px solid rgba(212,175,106,.45);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--gold-deep);font-size:18px;font-weight:600;
+  margin-bottom:24px;
+  box-shadow:inset 0 -2px 4px rgba(212,175,106,.18);
+}
+.proto-card .roman{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:12px;letter-spacing:.22em;font-weight:600;
+  color:var(--gold-deep);text-transform:uppercase;
+  margin-bottom:14px;display:block;
+}
+.proto-card h4{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:26px;line-height:1.15;margin:0 0 16px;color:var(--text);
+  letter-spacing:-.01em;
+}
+.proto-card p{margin:0;font-size:15px;color:var(--text-soft);line-height:1.6}
+
+@media (max-width:980px){.protocol-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:580px){.protocol-grid{grid-template-columns:1fr}}
+
+.proto-footer{
+  padding:32px 40px;border-radius:var(--r-card);
+  background:linear-gradient(135deg, var(--ink-1) 0%, var(--ink-2) 100%);
+  color:var(--on-dark);
+  display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;
+  font-size:17px;line-height:1.5;
+  border:1px solid rgba(212,175,106,.2);
+  box-shadow:0 20px 50px -20px rgba(15,23,28,.4);
+}
+.proto-footer .sig{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:36px;line-height:1;
+  background:linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.proto-footer strong{color:#fbf8ee;font-weight:600}
+@media (max-width:680px){.proto-footer{grid-template-columns:1fr;gap:14px;padding:26px 24px}.proto-footer .sig{font-size:28px}}
+
+/* ================= S5 — AUTORIDADE (dark grad) ================= */
+.authority{
+  background:
+    radial-gradient(800px 500px at 100% 0%, rgba(212,175,106,.12), transparent 60%),
+    radial-gradient(600px 400px at 0% 100%, rgba(212,175,106,.06), transparent 60%),
+    linear-gradient(180deg, var(--ink-1) 0%, #11172a 100%);
+}
+.authority::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  opacity:.5;
+}
+
+.authority-grid{
+  display:grid;grid-template-columns:.8fr 1.2fr;gap:96px;align-items:center;
+  position:relative;z-index:2;
+}
+.dr-photo-wrap{position:relative;max-width:480px}
+.dr-photo{
+  aspect-ratio:4/5;width:100%;
+  border-radius:var(--r-card);
+  overflow:hidden;background:#0d1322;position:relative;
+  box-shadow:
+    0 0 0 1px rgba(212,175,106,.35),
+    0 50px 100px -30px rgba(0,0,0,.7);
+}
+.dr-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.dr-photo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(10,13,20,.4) 100%);
+  pointer-events:none;
+}
+.dr-frame-deco{
+  position:absolute;inset:18px -18px -18px 18px;
+  border:1px solid rgba(212,175,106,.4);
+  border-radius:var(--r-card);
+  z-index:-1;
+}
+.dr-seal{
+  position:absolute;z-index:3;left:-30px;bottom:54px;
+  background:linear-gradient(180deg, var(--ink-3) 0%, var(--ink-2) 100%);
+  color:var(--on-dark);
+  padding:20px 26px;border-radius:16px;
+  border:1px solid rgba(212,175,106,.4);
+  box-shadow:0 24px 50px -16px rgba(0,0,0,.65);
+  max-width:280px;
+}
+.dr-seal .crest{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:8px;
+  display:flex;align-items:center;gap:10px;
+}
+.dr-seal .crest::before{
+  content:"";width:24px;height:1px;background:var(--gold);display:inline-block;
+}
+.dr-seal .name{
+  font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;
+  line-height:1.2;color:#fbf8ee;
+}
+.dr-seal .org{
+  display:block;margin-top:6px;font-size:11.5px;color:var(--on-dark-dim);
+  letter-spacing:.06em;
+}
+.dr-tag{
+  position:absolute;z-index:3;right:-16px;top:40px;
+  background:rgba(10,13,20,.85);backdrop-filter:blur(8px);
+  border:1px solid rgba(212,175,106,.35);border-radius:var(--r-pill);
+  padding:11px 20px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:#fbf8ee;font-weight:700;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.dr-tag .dot{
+  width:7px;height:7px;border-radius:50%;background:#7fbf6b;
+  box-shadow:0 0 0 4px rgba(127,191,107,.2);animation:livepulse 2s ease-in-out infinite
+}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 4px rgba(127,191,107,.18)}50%{box-shadow:0 0 0 10px rgba(127,191,107,0)}}
+
+.authority-list{list-style:none;padding:0;margin:36px 0 0}
+.authority-list li{
+  display:grid;grid-template-columns:56px 1fr;gap:24px;
+  padding:24px 0;border-bottom:1px solid rgba(212,175,106,.16);
+  font-size:16px;color:var(--on-dark-soft);line-height:1.55;
+}
+.authority-list li:last-child{border-bottom:0}
+.authority-list .roman{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:26px;color:var(--gold);font-weight:400;line-height:1;
+}
+.authority-list strong{
+  display:block;color:#fbf8ee;font-weight:600;font-size:17px;
+  margin-bottom:6px;letter-spacing:.005em;
+}
+.authority-list em{
+  color:var(--gold-soft);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:18px;
+}
+.dr-quote{
+  margin:48px 0 0;padding:0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:30px;line-height:1.3;color:#fbf8ee;
+  position:relative;padding-left:28px;
+  border-left:2px solid var(--gold);
+}
+.dr-quote cite{
+  display:block;margin-top:18px;
+  font-family:'Manrope',sans-serif;font-style:normal;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+}
+@media (max-width:980px){
+  .authority-grid{grid-template-columns:1fr;gap:64px}
+  .dr-photo-wrap{max-width:400px;margin:0 auto}
+  .dr-seal{left:-12px;bottom:24px;padding:16px 20px}
+  .dr-tag{right:-8px;top:20px}
+  .dr-quote{font-size:23px}
+}
+
+/* ================= S6 — DEPOIMENTOS (white) ================= */
+.testimonials{background:var(--white)}
+
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{
+  padding:40px 32px;
+  background:linear-gradient(180deg, var(--paper-2) 0%, #fff 100%);
+  border-radius:var(--r-card);
+  border:1px solid var(--hair-light);
+  position:relative;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.testi:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(15,23,28,.15)}
+.testi .stars{
+  font-size:12px;letter-spacing:.4em;margin-bottom:18px;
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.testi blockquote{
+  margin:0 0 24px;
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;
+  font-size:22px;line-height:1.35;color:var(--text);
+}
+.testi blockquote::before{
+  content:"“";color:var(--gold-deep);margin-right:2px;
+}
+.testi blockquote::after{
+  content:"”";color:var(--gold-deep);margin-left:2px;
+}
+.testi .who{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-dim);font-weight:700;
+}
+.testi .who::before{content:"— ";color:var(--gold-deep)}
+@media (max-width:880px){.testi-grid{grid-template-columns:1fr}}
+
+/* ================= S7 — STEPS (dark) ================= */
+.steps-sec{
+  background:
+    radial-gradient(700px 500px at 50% 0%, rgba(212,175,106,.08), transparent 60%),
+    var(--ink-1);
+}
+.steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  counter-reset:step;
+}
+.step{
+  padding:36px 28px;border-radius:var(--r-card);
+  background:linear-gradient(180deg, var(--ink-2) 0%, var(--ink-1) 100%);
+  border:1px solid rgba(212,175,106,.18);
+  position:relative;counter-increment:step;
+  transition:transform .3s ease, border-color .3s ease;
+}
+.step:hover{transform:translateY(-4px);border-color:rgba(212,175,106,.4)}
+.step::before{
+  content:counter(step, decimal-leading-zero);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:54px;line-height:1;
+  background:linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin-bottom:18px;
+}
+.step h4{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:22px;margin:0 0 12px;color:#fbf8ee;line-height:1.2;
+}
+.step p{margin:0;font-size:14.5px;color:var(--on-dark-soft);line-height:1.55}
+@media (max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ================= S8 — FAQ (white) ================= */
+.faq-section{background:var(--white)}
+
+.faq{max-width:900px;margin:0 auto;border-top:1px solid var(--hair-light)}
+.faq-item{border-bottom:1px solid var(--hair-light)}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  padding:28px 0;
+  display:grid;grid-template-columns:56px 1fr 32px;gap:16px;align-items:baseline;
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:23px;color:var(--text);line-height:1.25;
+  transition:color .2s ease;
+}
+.faq-item:hover summary{color:var(--gold-deep)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .q-num{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:16px;color:var(--gold-deep);letter-spacing:.02em;
+}
+.faq-item summary .q-tog{
+  font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;
+  color:var(--gold-deep);text-align:right;transition:transform .25s ease;line-height:1;
+}
+.faq-item[open] summary .q-tog{transform:rotate(45deg)}
+.faq-item .ans{
+  padding:0 0 32px 72px;font-size:16px;color:var(--text-soft);line-height:1.7;
+  max-width:62ch;
+}
+.faq-item .ans strong{color:var(--text);font-weight:600}
+.faq-item .ans em{font-style:italic;color:var(--text-soft)}
+@media (max-width:680px){
+  .faq-item summary{grid-template-columns:40px 1fr 28px;font-size:19px;padding:22px 0}
+  .faq-item .ans{padding-left:56px}
+}
+
+/* ================= S9 — FINAL CTA (deep dark) ================= */
+.final-cta{
+  background:
+    radial-gradient(900px 600px at 50% 100%, rgba(212,175,106,.12), transparent 60%),
+    radial-gradient(600px 400px at 50% 0%, rgba(212,175,106,.08), transparent 60%),
+    linear-gradient(180deg, #0a0d14 0%, #0e1422 100%);
+  padding:160px 0 140px;text-align:center;color:var(--on-dark);
+}
+.final-cta::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:120px;height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.final-cta .eyebrow{justify-content:center;margin:0 auto 36px;display:inline-flex}
+.final-cta h2{
+  color:#fbf8ee;max-width:22ch;margin:0 auto 28px;
+  font-size:clamp(38px,5vw,68px);text-align:center;
+}
+.final-cta h2 em.gold{
+  background:linear-gradient(180deg, var(--gold-soft) 20%, var(--gold) 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;
+}
+.final-cta p{
+  color:var(--on-dark-soft);font-size:18px;line-height:1.65;
+  max-width:60ch;margin:0 auto 52px;
+}
+.final-cta .secure{
+  margin-top:32px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--on-dark-dim);
+}
+.final-cta .secure::before{content:"⌑  "}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#070a10;color:var(--on-dark-dim);
+  padding:56px 0 64px;font-size:13px;
+  border-top:1px solid rgba(212,175,106,.14);
+}
+footer .container{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:end}
+footer .brand-foot{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:24px;color:#fbf8ee;line-height:1.1;
+}
+footer .brand-foot small{
+  display:block;margin-top:10px;font-family:'Manrope';font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;
+}
+footer .meta{text-align:right;font-size:12px;color:var(--on-dark-dim);letter-spacing:.04em;line-height:1.7}
+@media (max-width:680px){footer .container{grid-template-columns:1fr;gap:24px}footer .meta{text-align:left}}
+
+/* ================= STICKY / FLOAT ================= */
+.float-whats{
+  display:none;position:fixed;bottom:28px;right:28px;z-index:100;
+  width:62px;height:62px;border-radius:50%;
+  background:linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+  color:var(--ink);
+  align-items:center;justify-content:center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5),
+    0 18px 40px -10px rgba(212,175,106,.55),
+    0 0 0 4px rgba(10,13,20,.15);
+  transition:transform .25s ease;
+  animation:pulseGold 3s ease-in-out infinite;
+}
+.float-whats:hover{transform:scale(1.05)}
+.float-whats svg{width:26px;height:26px}
+@keyframes pulseGold{
+  0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 18px 40px -10px rgba(212,175,106,.55), 0 0 0 0 rgba(212,175,106,.5)}
+  50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 18px 40px -10px rgba(212,175,106,.55), 0 0 0 16px rgba(212,175,106,0)}
+}
+@media (min-width:781px){.float-whats{display:flex}}
+
+.sticky-whats{
+  display:none;position:fixed;bottom:14px;left:14px;right:14px;z-index:100;
+  background:linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 45%, var(--gold-deep) 100%);
+  color:var(--ink);
+  padding:18px 22px;border-radius:var(--r-pill);
+  font-size:15px;font-weight:700;letter-spacing:.02em;
+  align-items:center;justify-content:center;gap:12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.4),
+    0 18px 40px -8px rgba(212,175,106,.55);
+}
+.sticky-whats svg{width:18px;height:18px}
+@media (max-width:780px){
+  .sticky-whats{display:flex}
+  .final-cta{padding-bottom:170px}
+  footer{padding-bottom:96px}
+  section{padding:80px 0}
+}
+
+.wa-ico{width:18px;height:18px;flex:0 0 18px}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <div class="container">
+    <div class="brand">
+      <div class="mark"><img src="assets/dr-daniel.png" alt="Dr. Daniel Rocha"></div>
+      <div class="wordmark">
+        <span class="name">Dr. Daniel Rocha</span>
+        <span class="role">Medicina da Dor · HC-USP</span>
+      </div>
+    </div>
+    <a class="top-cta" href="#cta-final" data-whats="top">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+      <span class="label">Falar no WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero dark-grad">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="num">I.</span>
+          <span class="rule"></span>
+          <span>Medicina da Dor · HC-USP</span>
+        </div>
+        <h1 class="hero-title serif">
+          Sua enxaqueca <span class="accent">pode terminar.</span>
+          <span class="br">Mesmo que você já tenha tentado de tudo.</span>
+        </h1>
+        <p class="hero-sub">
+          Protocolo personalizado que reduz em até <b>80% das crises</b> já nas primeiras semanas — <b>sem depender de remédio todo dia</b>, sem cirurgia e com acompanhamento médico contínuo.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-gold" href="#cta-final" data-whats="hero">
+            <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+            <span>Quero falar com a equipe agora</span>
+          </a>
+        </div>
+        <div class="hero-micro">
+          <span>Resposta em até 15min · horário comercial</span>
+          <span>Atendimento humano · sem robô</span>
+          <span>São Paulo · Campinas</span>
+        </div>
+      </div>
+
+      <aside class="hero-portrait">
+        <div class="portrait-deco"></div>
+        <div class="portrait-monogram">D·R</div>
+        <div class="portrait-frame">
+          <img src="assets/dr-daniel.png" alt="Dr. Daniel Rocha — Medicina da Dor">
+        </div>
+        <div class="portrait-credential">
+          <div class="label">Hospital das Clínicas</div>
+          <div class="text">Pós-graduado em Medicina da Dor<em>Universidade de São Paulo</em></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S2 — EMPATIA ============ -->
+<section class="empathy white">
+  <div class="container">
+    <div class="section-head">
+      <div class="meta">
+        <div class="num-large">02</div>
+        <span class="label">Se você chegou aqui</span>
+      </div>
+      <h2 class="serif">A enxaqueca não é só uma dor. <em class="gold">É uma vida em pausa.</em></h2>
+    </div>
+
+    <div class="quotes-spread">
+      <div class="q"><div class="body">Mas de novo essa dor de cabeça?</div></div>
+      <div class="q"><div class="body">Tem certeza que não é coisa da sua cabeça?</div></div>
+      <div class="q"><div class="body">Você toma remédio todo dia, isso não faz mal não?</div></div>
+      <div class="q"><div class="body">A fulana também tem enxaqueca e vive normal…</div></div>
+    </div>
+
+    <div class="empathy-body">
+      <div class="anchor">Quem nunca teve uma crise <em>não entende.</em></div>
+      <div>
+        <p class="text">
+          Não entende cancelar o aniversário do filho porque a luz machuca. Não entende fingir que está tudo bem numa reunião enquanto a têmpora lateja. Não entende dormir com medo de acordar com mais uma crise.
+        </p>
+        <p class="text">
+          E o pior: <strong>você começa a aceitar que isso é "normal".</strong> Que é genético. Que é pra vida toda. Que o jeito é tomar mais um remédio e seguir.
+        </p>
+        <p class="text"><strong>Não é normal. E não precisa ser pra vida toda.</strong></p>
+        <a class="btn-link" href="#cta-final" data-whats="empatia">Quero entender como o protocolo funciona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S3 — OBJEÇÃO ============ -->
+<section class="objection dark">
+  <div class="container">
+    <div class="section-head">
+      <div class="meta">
+        <div class="num-large">03</div>
+        <span class="label">Quebra de objeção</span>
+      </div>
+      <div>
+        <h2 class="serif">"Já tentei de tudo e nada funcionou." Pode ser que sim. <em class="gold">Mas provavelmente você nunca tentou isso.</em></h2>
+        <p class="section-lead">A maioria dos pacientes que chega até o Dr. Daniel já passou por:</p>
+      </div>
+    </div>
+
+    <ul class="tried-list">
+      <li><span class="idx">i.</span><span class="txt">Anticonvulsivantes que deixaram o raciocínio lento</span></li>
+      <li><span class="idx">ii.</span><span class="txt">Antidepressivos que mudaram o humor mas não a dor</span></li>
+      <li><span class="idx">iii.</span><span class="txt">Analgésicos diários que viraram dependência</span></li>
+      <li><span class="idx">iv.</span><span class="txt">Neurologistas que receitaram mais um remédio</span></li>
+      <li><span class="idx">v.</span><span class="txt">Acupuntura, terapias alternativas e mudanças de dieta</span></li>
+      <li><span class="idx">vi.</span><span class="txt">Anos buscando uma resposta — e ouvindo "é genético, conviva"</span></li>
+    </ul>
+
+    <div class="callout">
+      <span class="lead">Por que nada disso resolveu?</span>
+      Porque tratavam o <em class="gold">sintoma</em> — não a origem. E porque enxaqueca crônica <strong>não é uma única doença</strong>: é um conjunto de gatilhos que exige um protocolo <strong>personalizado</strong>, não uma receita pronta.
+    </div>
+  </div>
+</section>
+
+<!-- ============ S4 — PROTOCOLO ============ -->
+<section class="protocol white">
+  <div class="container">
+    <div class="section-head">
+      <div class="meta">
+        <div class="num-large">04</div>
+        <span class="label">O protocolo</span>
+      </div>
+      <div>
+        <h2 class="serif">Tecnologia moderna + medicina <em class="gold">baseada em evidência</em></h2>
+        <p class="section-lead">Não é um tratamento. São vários recursos terapêuticos combinados, escolhidos especificamente para o seu caso depois de uma avaliação detalhada.</p>
+      </div>
+    </div>
+
+    <div class="protocol-grid">
+      <div class="proto-card">
+        <div class="mark">i</div>
+        <span class="roman">Recurso I</span>
+        <h4>Bloqueio para enxaqueca</h4>
+        <p>Atua diretamente nos nervos responsáveis pela transmissão da dor. Alívio que começa nas primeiras semanas.</p>
+      </div>
+      <div class="proto-card">
+        <div class="mark">ii</div>
+        <span class="roman">Recurso II</span>
+        <h4>Vacina Anti-CGRP</h4>
+        <p>Tecnologia mais avançada disponível hoje no mundo para enxaqueca. Aplicação que previne as crises antes que aconteçam.</p>
+      </div>
+      <div class="proto-card">
+        <div class="mark">iii</div>
+        <span class="roman">Recurso III</span>
+        <h4>Neuromodulação + Ondas de Choque</h4>
+        <p>Tecnologias não invasivas que "reprogramam" a forma como o cérebro processa a dor.</p>
+      </div>
+      <div class="proto-card">
+        <div class="mark">iv</div>
+        <span class="roman">Recurso IV</span>
+        <h4>Botox Terapêutico</h4>
+        <p>Não é estético. É um tratamento aprovado pela ANVISA para enxaqueca crônica, com resultados comprovados.</p>
+      </div>
+    </div>
+
+    <div class="proto-footer">
+      <div class="sig">N.B.</div>
+      <div><strong>Você não vai usar tudo.</strong> Você vai usar <strong>o que o seu caso pede</strong> — definido após uma avaliação presencial detalhada do seu histórico, gatilhos e padrão de crise.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S5 — AUTORIDADE ============ -->
+<section class="authority dark-grad">
+  <div class="container">
+    <div class="authority-grid">
+      <div class="dr-photo-wrap">
+        <div class="dr-frame-deco"></div>
+        <div class="dr-photo">
+          <img src="assets/dr-daniel.png" alt="Dr. Daniel Rocha — Medicina da Dor">
+        </div>
+        <div class="dr-tag">
+          <span class="dot"></span> Atendendo hoje
+        </div>
+        <div class="dr-seal">
+          <div class="crest">Hospital das Clínicas · USP</div>
+          <div class="name">Pós-graduado em Medicina da Dor</div>
+          <span class="org">Referência nº 1 em dor crônica no Brasil</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">
+          <span class="num">05</span>
+          <span class="rule"></span>
+          <span>Quem é</span>
+        </div>
+        <h2 class="serif" style="margin-top:24px">Dr. Daniel Rocha,<br>especialista em <em class="gold">Medicina da Dor</em></h2>
+
+        <ul class="authority-list">
+          <li>
+            <span class="roman">i.</span>
+            <div><strong>Pós-graduado em Medicina da Dor</strong>pelo Hospital das Clínicas da USP — referência nº1 do Brasil em dor crônica.</div>
+          </li>
+          <li>
+            <span class="roman">ii.</span>
+            <div><strong>+6 anos dedicados exclusivamente à enxaqueca.</strong>Não é uma das especialidades. É <em>a</em> especialidade.</div>
+          </li>
+          <li>
+            <span class="roman">iii.</span>
+            <div><strong>Centenas de pacientes tratados</strong>com redução média de 80% nas crises e na quantidade de analgésicos.</div>
+          </li>
+          <li>
+            <span class="roman">iv.</span>
+            <div><strong>Atendimento presencial em São Paulo e Campinas</strong>com suporte online durante todo o protocolo.</div>
+          </li>
+        </ul>
+
+        <blockquote class="dr-quote">
+          Minha missão é simples: devolver ao meu paciente o direito de viver um dia comum — sem medo da próxima crise.
+          <cite>— Dr. Daniel Rocha</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S6 — DEPOIMENTOS ============ -->
+<section class="testimonials white">
+  <div class="container">
+    <div class="section-head">
+      <div class="meta">
+        <div class="num-large">06</div>
+        <span class="label">Histórias reais</span>
+      </div>
+      <div>
+        <h2 class="serif">O que muda na vida de <em class="gold">quem termina o protocolo</em></h2>
+        <p class="section-lead">Depoimentos reais publicados no Google Meu Negócio e no Instagram do Dr. Daniel.</p>
+      </div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>Não lembro a última vez que senti dor. Voltei a sair com meus filhos sem pensar em remédio na bolsa.</blockquote>
+        <div class="who">Paciente, 38 anos</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>Eu já tinha desistido. Achava que ia ser pro resto da vida. Em 3 meses, minha vida mudou completamente.</blockquote>
+        <div class="who">Paciente, 42 anos</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>Voltei a ser feliz. Parece simples, mas pra quem tem enxaqueca há 15 anos, é tudo.</blockquote>
+        <div class="who">Paciente, 51 anos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S7 — COMO FUNCIONA ============ -->
+<section class="steps-sec dark">
+  <div class="container">
+    <div class="section-head">
+      <div class="meta">
+        <div class="num-large">07</div>
+        <span class="label">Passo a passo</span>
+      </div>
+      <div>
+        <h2 class="serif">Como você começa <em class="gold">hoje</em></h2>
+        <p class="section-lead">Sem burocracia, sem compromisso de fechar nada na primeira conversa.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h4>Clique no WhatsApp</h4>
+        <p>Conversa com a nossa equipe, tira dúvidas e agenda sua avaliação. Sem pressa, sem pressão.</p>
+      </div>
+      <div class="step">
+        <h4>Consulta presencial</h4>
+        <p>SP ou Campinas. O Dr. Daniel avalia seu histórico, identifica gatilhos e desenha o protocolo.</p>
+      </div>
+      <div class="step">
+        <h4>Início do tratamento</h4>
+        <p>Você começa o protocolo personalizado com acompanhamento via WhatsApp durante os 3 meses.</p>
+      </div>
+      <div class="step">
+        <h4>Sua vida de volta</h4>
+        <p>Na maioria dos casos, redução de mais de 80% das crises já nos primeiros 30 dias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S8 — FAQ ============ -->
+<section class="faq-section white">
+  <div class="container">
+    <div class="section-head" style="grid-template-columns:.9fr 2.1fr">
+      <div class="meta">
+        <div class="num-large">08</div>
+        <span class="label">Dúvidas frequentes</span>
+      </div>
+      <h2 class="serif">Perguntas que <em class="gold">todo paciente faz</em> antes de agendar</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary><span class="q-num">i.</span><span>E se não funcionar comigo?</span><span class="q-tog">+</span></summary>
+        <div class="ans">Honestidade: nenhum tratamento sério promete 100% para 100% das pessoas. O que prometemos é uma <strong>avaliação criteriosa antes de aceitar você como paciente</strong>. Se o Dr. Daniel concluir que o seu caso não tem alta probabilidade de resposta, ele vai te dizer — e te orientar para outro caminho. Não trabalhamos com falsa esperança.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">ii.</span><span>Vocês atendem convênio?</span><span class="q-tog">+</span></summary>
+        <div class="ans">Não. Trabalhamos exclusivamente como <strong>medicina particular</strong> — porque isso garante que o seu protocolo seja decidido pela <em>necessidade clínica</em>, e não pelo que o convênio autoriza. O investimento é apresentado de forma transparente na consulta.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">iii.</span><span>Qual o valor do protocolo?</span><span class="q-tog">+</span></summary>
+        <div class="ans">O valor é definido <strong>só depois da avaliação</strong>, porque o protocolo é personalizado. O que podemos adiantar: muitos pacientes gastaram mais em 2 anos de remédios e consultas avulsas do que gastam no protocolo completo de 3 meses — com resultado infinitamente melhor.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">iv.</span><span>Quanto tempo dura o efeito?</span><span class="q-tog">+</span></summary>
+        <div class="ans">A maioria dos pacientes mantém resultado por meses ou anos após o protocolo. Alguns precisam de manutenção pontual — outros não precisam de mais nada. O Dr. Daniel explica exatamente o que esperar no seu caso na avaliação.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">v.</span><span>É seguro? Tem efeito colateral?</span><span class="q-tog">+</span></summary>
+        <div class="ans">Todos os procedimentos são aprovados pela ANVISA e baseados em evidência científica. Efeitos colaterais existem em qualquer tratamento — mas são <strong>incomparavelmente menores</strong> do que tomar analgésico todos os dias por anos a fio.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">vi.</span><span>Preciso parar com os remédios que tomo hoje?</span><span class="q-tog">+</span></summary>
+        <div class="ans">Não no início. A retirada é <strong>gradual e supervisionada</strong>, conforme as crises diminuem. Você nunca fica desassistido.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-num">vii.</span><span>Em quanto tempo começo a sentir resultado?</span><span class="q-tog">+</span></summary>
+        <div class="ans">A maior parte dos pacientes percebe redução já nas <strong>primeiras semanas</strong>. O protocolo completo tem 3 meses de duração, com avaliações periódicas para ajustar a abordagem ao seu progresso.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S9 — CTA FINAL ============ -->
+<section class="final-cta dark" id="cta-final">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">09</span>
+      <span class="rule"></span>
+      <span>Primeiro passo</span>
+    </div>
+    <h2 class="serif">Imagine acordar amanhã <em class="gold">sem medo da próxima crise.</em></h2>
+    <p>Sem o ritual do remédio na bolsa. Sem cancelar planos. Sem o "será que vai dar dor hoje?" toda manhã.<br><br>O primeiro passo custa zero: uma conversa de 5 minutos no WhatsApp para entender se o seu caso encaixa no protocolo.</p>
+    <a class="btn btn-gold" href="#" id="whats-link" data-whats="final" style="padding:24px 44px;font-size:16px">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+      <span>Quero agendar minha avaliação agora</span>
+    </a>
+    <div class="secure">Seus dados são confidenciais · Você não será adicionado em listas de transmissão</div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="brand-foot">
+      Dr. Daniel Rocha
+      <small>Medicina da Dor · Tratamento de Enxaqueca · SP & Campinas</small>
+    </div>
+    <div class="meta">
+      CRM/SP — Médico responsável<br>
+      © 2026 · Todos os direitos reservados
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE ============ -->
+<a href="#" id="sticky-link" class="sticky-whats" data-whats="sticky">
+  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+  Falar no WhatsApp
+</a>
+
+<!-- ============ FLOAT DESKTOP ============ -->
+<a href="#" id="float-link" class="float-whats" aria-label="WhatsApp" data-whats="float">
+  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+</a>
+
+<script>
+/* ========================================================
+   CONFIG DO WHATSAPP — TROCAR O NÚMERO DO DR. DANIEL AQUI
+   Formato: 55 + DDD + número (apenas dígitos, sem espaços)
+   ======================================================== */
+const WHATS_NUMBER = "5511999999999"; // <-- TROCAR
+const WHATS_MSG = "Olá! Vim pelo site e queria saber mais sobre o tratamento de enxaqueca do Dr. Daniel.";
+const WHATS_URL = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(WHATS_MSG)}`;
+
+document.querySelectorAll('a.btn-gold, a.top-cta, a.sticky-whats, a.float-whats, a.btn-link').forEach(el => {
+  if (el.classList.contains('top-cta') || el.classList.contains('btn-link')) return;
+  el.setAttribute('href', WHATS_URL);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+});
+
+document.querySelectorAll('[data-whats]').forEach(el => {
+  el.addEventListener('click', () => {
+    const origem = el.getAttribute('data-whats');
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXXXX/YYYYYY',
+        'event_label': 'whatsapp_click_' + origem
+      });
+      gtag('event', 'whatsapp_click', { source: origem });
+    }
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact', { source: origem });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

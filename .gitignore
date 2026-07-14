@@ -1,0 +1,13 @@
+# Node/build artifacts (não usamos, mas prevenção)
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Arquivos temporários locais
+*.log
+*.tmp
