@@ -589,6 +589,35 @@ h1.hero-title .br{display:block}
 }
 .proto-card p{margin:0;font-size:15px;color:var(--text-soft);line-height:1.6}
 
+/* Botão de vídeo dentro dos cards do protocolo */
+.proto-card{display:flex;flex-direction:column}
+.proto-card p{flex:1}
+.proto-video-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:20px;padding:12px 18px;
+  background:linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+  border:1px solid rgba(212,175,106,.5);
+  border-radius:var(--r-pill);
+  font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.04em;color:var(--gold-deep);
+  cursor:pointer;align-self:flex-start;
+  transition:background .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
+  box-shadow:0 4px 14px -8px rgba(212,175,106,.4);
+}
+.proto-video-btn:hover{
+  background:linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 100%);
+  border-color:var(--gold);color:var(--ink);
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px -10px rgba(212,175,106,.7);
+}
+.proto-video-btn svg{
+  width:14px;height:14px;flex:0 0 14px;
+  padding:3px;border-radius:50%;
+  background:var(--gold-deep);color:#fff;
+  transition:background .25s ease;
+}
+.proto-video-btn:hover svg{background:var(--ink)}
+
 @media (max-width:980px){.protocol-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:580px){.protocol-grid{grid-template-columns:1fr}}
 
@@ -1059,6 +1088,56 @@ footer .meta{text-align:right;font-size:12px;color:var(--on-dark-dim);letter-spa
   .dr-quote{font-size:17px}
   .hero-micro .chip{padding:9px 12px;font-size:11.5px}
 }
+
+/* ================= MODAL DE VÍDEO (Shorts do Dr. Daniel) ================= */
+.video-modal{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(6,8,14,.85);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:40px 20px;
+  animation:vm-fade .25s ease;
+}
+.video-modal.is-open{display:flex}
+@keyframes vm-fade{from{opacity:0}to{opacity:1}}
+
+.video-modal-frame{
+  position:relative;
+  width:100%;max-width:400px;
+  aspect-ratio:9/16;
+  border-radius:20px;overflow:hidden;
+  background:#0a0d14;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(212,175,106,.35);
+  animation:vm-scale .3s cubic-bezier(.2,.7,.3,1);
+}
+@keyframes vm-scale{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.video-modal-frame iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+}
+.video-modal-close{
+  position:absolute;top:-52px;right:0;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1px solid rgba(212,175,106,.45);
+  color:#fbf8ee;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;line-height:1;font-family:'Manrope',sans-serif;
+  transition:background .2s ease, transform .2s ease;
+}
+.video-modal-close:hover{background:rgba(212,175,106,.3);transform:rotate(90deg)}
+.video-modal-title{
+  position:absolute;top:-46px;left:0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:15px;color:var(--gold-soft);letter-spacing:.02em;
+  max-width:calc(100% - 60px);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+@media (max-width:480px){
+  .video-modal{padding:60px 16px 20px}
+  .video-modal-frame{max-width:340px}
+  .video-modal-close{top:-48px;width:36px;height:36px;font-size:22px}
+  .video-modal-title{top:-42px;font-size:13px}
+}
+body.vm-locked{overflow:hidden}
 </style>
 </head>
 <body>
@@ -1220,12 +1299,20 @@ footer .meta{text-align:right;font-size:12px;color:var(--on-dark-dim);letter-spa
         <span class="roman">Recurso I</span>
         <h4>Bloqueio para enxaqueca</h4>
         <p>Atua diretamente nos nervos responsáveis pela transmissão da dor. Alívio que começa nas primeiras semanas.</p>
+        <button class="proto-video-btn" data-video="saESZJ7NmHs" data-title="Bloqueio para enxaqueca — Dr. Daniel Rocha" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Ver o Dr. Daniel explicando</span>
+        </button>
       </div>
       <div class="proto-card">
         <div class="mark">ii</div>
         <span class="roman">Recurso II</span>
         <h4>Imunoterapia preventiva</h4>
         <p>Tecnologia mais avançada disponível hoje no mundo para enxaqueca. Aplicação periódica que previne as crises antes que aconteçam.</p>
+        <button class="proto-video-btn" data-video="GV5YU_I5FCM" data-title="Imunoterapia preventiva — Dr. Daniel Rocha" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Ver o Dr. Daniel explicando</span>
+        </button>
       </div>
       <div class="proto-card">
         <div class="mark">iii</div>
@@ -1238,6 +1325,10 @@ footer .meta{text-align:right;font-size:12px;color:var(--on-dark-dim);letter-spa
         <span class="roman">Recurso IV</span>
         <h4>Aplicação terapêutica</h4>
         <p>Não é estético. Procedimento aprovado pela ANVISA para enxaqueca crônica, com resultados comprovados.</p>
+        <button class="proto-video-btn" data-video="DDejYN-GVG8" data-title="Aplicação terapêutica — Dr. Daniel Rocha" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Ver o Dr. Daniel explicando</span>
+        </button>
       </div>
     </div>
 
@@ -1463,6 +1554,15 @@ footer .meta{text-align:right;font-size:12px;color:var(--on-dark-dim);letter-spa
   Falar no WhatsApp
 </a>
 
+<!-- ============ MODAL DE VÍDEO (Dr. Daniel explicando os recursos) ============ -->
+<div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-labelledby="video-modal-title" hidden>
+  <div class="video-modal-frame">
+    <div class="video-modal-title" id="video-modal-title"></div>
+    <button class="video-modal-close" id="video-modal-close" type="button" aria-label="Fechar vídeo">×</button>
+    <div class="video-modal-player" id="video-modal-player"></div>
+  </div>
+</div>
+
 <!-- ============ FLOAT DESKTOP ============ -->
 <a href="#" id="float-link" class="float-whats" aria-label="WhatsApp" data-whats="float">
   <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.4c1.4.7 2.9 1.1 4.6 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
@@ -1491,6 +1591,39 @@ document.querySelectorAll('a.btn-gold, a.top-cta, a.sticky-whats, a.float-whats,
   el.setAttribute('target', '_blank');
   el.setAttribute('rel', 'noopener');
 });
+
+/* ========================================================
+   MODAL DE VÍDEO — Shorts do Dr. Daniel explicando os recursos
+   ======================================================== */
+(function(){
+  const modal = document.getElementById('video-modal');
+  const player = document.getElementById('video-modal-player');
+  const titleEl = document.getElementById('video-modal-title');
+  const closeBtn = document.getElementById('video-modal-close');
+  if(!modal) return;
+
+  function open(id, title){
+    if(!id) return;
+    player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="' + (title || 'Vídeo') + '"></iframe>';
+    titleEl.textContent = title || '';
+    modal.hidden = false;
+    modal.classList.add('is-open');
+    document.body.classList.add('vm-locked');
+  }
+  function close(){
+    modal.classList.remove('is-open');
+    document.body.classList.remove('vm-locked');
+    player.innerHTML = ''; // remove iframe = para o vídeo
+    setTimeout(() => { modal.hidden = true; }, 250);
+  }
+
+  document.querySelectorAll('.proto-video-btn').forEach(btn => {
+    btn.addEventListener('click', () => open(btn.dataset.video, btn.dataset.title));
+  });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e => { if(e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+})();
 
 document.querySelectorAll('[data-whats]').forEach(el => {
   el.addEventListener('click', () => {
