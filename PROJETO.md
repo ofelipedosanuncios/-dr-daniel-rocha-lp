@@ -5,8 +5,10 @@
 ## Links
 
 - **Site no ar (cliente):** hospedado na **Hostinger** — subir via File Manager (ver [DEPLOY.md](DEPLOY.md))
-- **Repositório GitHub:** https://github.com/ofelipedosanuncios/dr-daniel-rocha-lp
+- **Preview público (GitHub Pages):** https://ofelipedosanuncios.github.io/-dr-daniel-rocha-lp/ (deploy automático a cada push no `main`; ~1 min de propagação)
+- **Repositório GitHub:** https://github.com/ofelipedosanuncios/-dr-daniel-rocha-lp *(nome com traço extra por acidente de criação; pode renomear em Settings quando quiser — a URL do Pages muda junto)*
 - **Código-fonte local:** `landing-pages/index.html` (site inteiro em um arquivo só, HTML+CSS+JS embutido)
+- **Redirect da raiz do repo:** `index.html` na raiz apenas redireciona pra `/landing-pages/` no GitHub Pages (não é a LP em si)
 - **LP anterior arquivada:** `_arquivo/lp-antiga.html` (backup — não usar)
 
 ## Contexto do projeto
